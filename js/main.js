@@ -53,7 +53,6 @@ const isValidStringLength = function ( string, maxLenght ) {
   return string.length <= maxLenght;
 };
 
-
 //Функция, возвращающая случайное целое число из переданного диапазона включительно.
 const getRandomInteger = function (min, max) {
   min = Math.round(min);
@@ -62,7 +61,6 @@ const getRandomInteger = function (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min
   }
 };
-
 
 // 1-st task: id
 const generateIdsArray = function (length, min, max) {
@@ -86,7 +84,6 @@ const generateIdsArray = function (length, min, max) {
 };
 
 //создание коментария
-
 const getComments = function () {
   let comments = [];
 
