@@ -48,16 +48,6 @@ const DESCRIPTIONS = [
   'советую всем попробовать сафари',
 ];
 
-const getDescription = function () {
-  let description = [];
-  for (let d = 0; d <= DESCRIPTIONS.index; d++) {
-    description.push(d)
-  }
-
-  return DESCRIPTIONS[d];
-};
-
-
 // Функция для проверки максимальной длины строки введённого комментария.
 const isValidStringLength = function ( string, maxLenght ) {
   return string.length <= maxLenght;
@@ -91,6 +81,7 @@ const generateIdsArray = function (length, min, max) {
 
     ids.push(id);
   }
+
   return ids;
 };
 
@@ -98,12 +89,13 @@ const generateIdsArray = function (length, min, max) {
 
 const getComments = function () {
   let comments = [];
+
   const commentsCount = getRandomInteger(1, 6);
   const ids = generateIdsArray(commentsCount, 10, 99);
 
-  for (let k = 0; k < commentsCount; k++) {
+  for (let i = 0; i < commentsCount; i++) {
     let comment = {
-      id: ids[k],
+      id: ids[i],
       avatar: `img/avatar-${getRandomInteger(1, 6)}.svg`,
       message: COMMENTS[getRandomInteger(0, 5)],
       name: NAMES[getRandomInteger(0, NAMES.length)],
@@ -128,4 +120,3 @@ for (let i = 1; i < POSTS_COUNT + 1; i++) {
 
   posts.push(post);
 }
-
