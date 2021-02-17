@@ -12,4 +12,25 @@ const getRandomInteger = function (min, max) {
   }
 };
 
-export {isValidStringLength, getRandomInteger}
+//Функция генерирует произвольный массив с числами которые не повторяются.
+const generateIdsArray = function (length, min, max) {
+  const ids = [];
+
+  while (ids.length < length) {
+    let id = getRandomInteger(min, max);
+
+    let isContain = ids.find((item) => {
+      return item === id;
+    });
+
+    if (isContain) {
+      continue;
+    }
+
+    ids.push(id);
+  }
+
+  return ids;
+};
+
+export {isValidStringLength, getRandomInteger, generateIdsArray}
