@@ -38,4 +38,4 @@ for (let i = 1; i < POSTS_COUNT + 1; i++) {
   posts.push(post);
 }
 
-export {getComments}
+export {posts};

@@ -1,6 +1,7 @@
-<<<<<<< HEAD
-import '/data.js';
-=======
+import './data.js';
+import './constans.js';
+import './create_photo.js';
+
 // Функция для проверки максимальной длины строки введённого комментария.
 const isValidStringLength = function ( string, maxLenght ) {
   return string.length <= maxLenght
@@ -15,5 +16,3 @@ const  getRandomInteger = function (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min
   }
 };
-
->>>>>>> master
