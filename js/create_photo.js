@@ -2,12 +2,11 @@ import {posts} from './data.js';
 
 // Ищем нужные элементы
 const mainContainer = document.querySelector('.pictures');
-const list = mainContainer.children;
 const fragment = document.createDocumentFragment();
 const newPicture = document.querySelector('#picture').content;
 
 // На основе временных данных для разработки и шаблона создайем DOM-элементы, соответствующие фотографиям, и заполняем их данными:
-posts.forEach(function (currentValue,) {
+posts.forEach(function (currentValue) {
  const newFragment = newPicture.cloneNode(true);
 
 const newPhoto = newFragment.querySelector('.picture__img');
@@ -25,4 +24,3 @@ fragment.appendChild(newFragment);
 mainContainer.appendChild(fragment);
 
 export {mainContainer};
-
