@@ -1,7 +1,7 @@
-import {getRandomInteger, generateIdsArray} from './util.js'
-import {POSTS_COUNT, NAMES, COMMENTS, DESCRIPTIONS} from './constans.js'
+import { getRandomInteger, generateIdsArray } from './util.js'
+import { POSTS_COUNT, NAMES, COMMENTS, DESCRIPTIONS } from './constans.js'
 
-//создание коментария
+// создание коментария
 const getComments = function () {
   let comments = [];
 
@@ -14,23 +14,23 @@ const getComments = function () {
       avatar: `img/avatar-${getRandomInteger(1, 6)}.svg`,
       message: COMMENTS[getRandomInteger(0, 5)],
       name: NAMES[getRandomInteger(0, NAMES.length)],
-    }
+    };
 
     comments.push(comment);
   }
 
   return comments;
-}
+};
 
-//функции для создания массива из 25 сгенерированных объектов.
-//Каждый объект массива — описание фотографии, опубликованной пользователем.
+//  функции для создания массива из 25 сгенерированных объектов.
+//  Каждый объект массива — описание фотографии, опубликованной пользователем.
 const posts = [];
 
 for (let i = 1; i < POSTS_COUNT + 1; i++) {
   let post = {
     id: i,
     url: `photos/${i}.jpg`,
-    description: DESCRIPTIONS[i-1],
+    description: DESCRIPTIONS[i - 1],
     likes: getRandomInteger(15, 200),
     comments: getComments(),
   };
@@ -38,4 +38,4 @@ for (let i = 1; i < POSTS_COUNT + 1; i++) {
   posts.push(post);
 }
 
-export {posts};
+export { posts };

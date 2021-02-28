@@ -1,26 +1,29 @@
-import {posts} from './data.js';
+import { posts } from './data.js';
 
 // Ищем нужные элементы
 const mainContainer = document.querySelector('.pictures');
 const fragment = document.createDocumentFragment();
-const newPicture = document.querySelector('#picture').content;
+const pictureTemplate = document.querySelector('#picture').content;
 
-// На основе временных данных для разработки и шаблона создайем DOM-элементы, соответствующие фотографиям, и заполняем их данными:
-posts.forEach(function (currentValue) {
- const newFragment = newPicture.cloneNode(true);
+// На основе временных данных для разработки и шаблона создайем
+// DOM-элементы, соответствующие фотографиям, и заполняем их данными:
 
-const newPhoto = newFragment.querySelector('.picture__img');
-newPhoto.src = currentValue.url;
+posts.forEach((postItem) => {
+  const newElementNode = pictureTemplate.cloneNode(true);
 
-const photoLikes = newFragment.querySelector('.picture__likes');
-photoLikes.textContent = currentValue.likes;
+  newElementNode.querySelector('.picture__img').src = postItem.url;
 
-const photoComments = newFragment.querySelector('.picture__comments');
-photoComments.textContent = currentValue.comments;
+  newElementNode.querySelector('.picture__likes').textContent = postItem.likes;
 
-fragment.appendChild(newFragment);
+  const comment = postItem.comments;
+  comment.forEach((postInfo) => {
+    const newComment = postInfo.message;
+    newElementNode.querySelector('.picture__comments').textContent = newComment;
+  });
+
+  fragment.appendChild(newElementNode);
 });
 
 mainContainer.appendChild(fragment);
 
-export {mainContainer};
+export { mainContainer };
