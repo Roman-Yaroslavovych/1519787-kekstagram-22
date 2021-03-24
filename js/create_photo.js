@@ -12,13 +12,11 @@ posts.forEach((postItem) => {
   const newElementNode = pictureTemplate.cloneNode(true);
 
   newElementNode.querySelector('.picture__img').src = postItem.url;
-
   newElementNode.querySelector('.picture__likes').textContent = postItem.likes;
 
   const comment = postItem.comments;
   comment.forEach((postInfo) => {
-    const newComment = postInfo.message;
-    newElementNode.querySelector('.picture__comments').textContent = newComment;
+    newElementNode.querySelector('.picture__comments').textContent = postInfo.message;
   });
 
   fragment.appendChild(newElementNode);

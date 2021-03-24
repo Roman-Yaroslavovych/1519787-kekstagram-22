@@ -48,4 +48,6 @@ const DESCRIPTIONS = [
   'советую всем попробовать сафари',
 ];
 
-export {POSTS_COUNT, NAMES, COMMENTS, DESCRIPTIONS}
+export {
+  POSTS_COUNT, NAMES, COMMENTS, DESCRIPTIONS,
+};
